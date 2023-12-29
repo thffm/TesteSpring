@@ -7,11 +7,11 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "user_name")
+@Table(name = "tb_user")
 public class User implements Serializable {
     private static  final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id//chave primaria
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//genera automatico
     private Long id;
     private String name;
     private String email;
