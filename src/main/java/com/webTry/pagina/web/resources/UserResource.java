@@ -23,7 +23,7 @@ public class UserResource {
         return ResponseEntity.ok().body(list);
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(value = "/{id}")//pegando por id
     public ResponseEntity<User> findById(@PathVariable Long id){
         User obj = service.findById(id);
         return ResponseEntity.ok().body(obj);//manda respota para o http
