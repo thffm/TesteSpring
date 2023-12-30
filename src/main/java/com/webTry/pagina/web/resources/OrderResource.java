@@ -19,7 +19,6 @@ public class OrderResource {
     @GetMapping//requisicao http
     public ResponseEntity<List<Order>> findAll(){
         List<Order> list = service.findAll();
-
         return ResponseEntity.ok().body(list);
     }
 
