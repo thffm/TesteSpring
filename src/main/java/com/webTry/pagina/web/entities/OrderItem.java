@@ -1,5 +1,6 @@
 package com.webTry.pagina.web.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.webTry.pagina.web.entities.pk.OrdemItemPk;
 import jakarta.persistence.*;
 
@@ -10,7 +11,7 @@ import java.util.Objects;
 public class OrderItem implements Serializable {
     public static final long serialVersionUID =1L;
     @EmbeddedId//id composto
-    private OrdemItemPk id;
+    private OrdemItemPk  id = new OrdemItemPk();
 
     private Integer quantity;
     private Double price;
@@ -25,6 +26,7 @@ public class OrderItem implements Serializable {
         this.price = price;
     }
 
+    @JsonIgnore
     public Order getOrder(){
         return id.getOrder();
     }
