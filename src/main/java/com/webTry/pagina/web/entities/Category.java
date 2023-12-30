@@ -1,5 +1,6 @@
 package com.webTry.pagina.web.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
@@ -16,7 +17,8 @@ public class Category  implements Serializable {
     private Long id;
     private String name;
 
-    @Transient
+    @JsonIgnore
+    @ManyToMany(mappedBy = "categories")//pegar o nome da outra chamada
     private Set<Product> products = new HashSet<>();
 
     public Category(){
