@@ -68,6 +68,10 @@ public class User implements Serializable {
         this.phone = phone;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
     public List<Order> getOrders(){
         return orders;
     }
